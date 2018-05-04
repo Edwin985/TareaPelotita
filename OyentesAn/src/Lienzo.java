@@ -14,8 +14,8 @@ public class Lienzo extends JPanel{
 	
 	private Color colorFondo;
 	private int XOrigen = 100, YOrigen = 100;
-	private int FiguraX = XOrigen - 200;
-    private int FiguraY = YOrigen -250;
+	private int OrigenPltX = XOrigen - 200;
+    private int OrigenPltY = YOrigen - 250;
 	private accionesRaton oyenteRaton;
 public Lienzo(){
 	super();
@@ -25,22 +25,22 @@ public Lienzo(){
         @Override
         public void keyPressed(KeyEvent e) {
             if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-          	  FiguraX = FiguraX + 50;
+            	OrigenPltX = OrigenPltX + 50;
                 repaint();
             }
 
             if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-          	  FiguraX = FiguraX - 50;
+            	OrigenPltX = OrigenPltX - 50;
                 repaint();
             }
 
             if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-                FiguraY = FiguraY + 50;
+            	OrigenPltY = OrigenPltY + 50;
                 repaint();
             }
 
             if(e.getKeyCode() == KeyEvent.VK_UP) {
-                FiguraY = FiguraY - 50;
+            	OrigenPltY = OrigenPltY - 50;
                 repaint();
             }
         }
@@ -190,7 +190,7 @@ class accionesRaton extends MouseAdapter implements MouseMotionListener {
 
 public void graficarFigura(Graphics g){
     g.setColor(Color.BLUE);
-    g.drawOval(FiguraX+300,FiguraY+230,100,100);
+    g.drawOval(OrigenPltX + 160, OrigenPltY + 215,75,75);
 
 }
 }
