@@ -25,22 +25,22 @@ public Lienzo(){
         @Override
         public void keyPressed(KeyEvent e) {
             if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            	OrigenPltX = OrigenPltX + 50;
+            	OrigenPltX = OrigenPltX + 15;
                 repaint();
             }
 
             if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-            	OrigenPltX = OrigenPltX - 50;
+            	OrigenPltX = OrigenPltX - 15;
                 repaint();
             }
 
             if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-            	OrigenPltY = OrigenPltY + 50;
+            	OrigenPltY = OrigenPltY + 15;
                 repaint();
             }
 
             if(e.getKeyCode() == KeyEvent.VK_UP) {
-            	OrigenPltY = OrigenPltY - 50;
+            	OrigenPltY = OrigenPltY - 15;
                 repaint();
             }
         }
@@ -68,7 +68,6 @@ public Lienzo(){
 	this.addMouseMotionListener(oyenteRaton);
 }
 public void paintComponent (Graphics g){
-	 super.paintComponent(g);
 	g.setColor(this.colorFondo);
 	g.fillRect(0, 0, this.getWidth(), this.getHeight());
 	
@@ -190,7 +189,7 @@ class accionesRaton extends MouseAdapter implements MouseMotionListener {
 
 public void graficarFigura(Graphics g){
     g.setColor(Color.BLUE);
-    g.drawOval(OrigenPltX + 160, OrigenPltY + 215,75,75);
+    g.fillOval(OrigenPltX + 185, OrigenPltY + 235,30,30);
 
 }
 }
